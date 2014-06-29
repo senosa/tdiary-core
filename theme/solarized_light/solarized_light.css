@@ -1,0 +1,1101 @@
+@charset "UTF-8";
+/*
+Title: solarized_light
+Revision: $Revision: 1.0 $
+Author: senosa
+Access: senosa@gmail.com
+License: GPL
+Comment: default theme for tDiary 3.1 or later.
+
+Copyright 2011 (C) TADA Tadashi <t@tdtds.jp>
+*/
+/* line 17, ../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 116, ../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 40, sass/solarized_light.scss */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 45, sass/solarized_light.scss */
+body {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: #657b83;
+  background-color: #fdf6e3;
+}
+
+/* line 53, sass/solarized_light.scss */
+a {
+  color: #268bd2;
+}
+/* line 55, sass/solarized_light.scss */
+a img {
+  vertical-align: bottom;
+}
+
+/* line 59, sass/solarized_light.scss */
+a:visited {
+  color: #b58900;
+}
+
+/* line 62, sass/solarized_light.scss */
+a:hover {
+  color: #dc322f;
+}
+
+/* line 66, sass/solarized_light.scss */
+div.whole-content {
+  overflow: hidden;
+  *zoom: 1;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 940px;
+  padding: 0 10px;
+}
+
+/* line 74, sass/solarized_light.scss */
+div.adminmenu {
+  text-align: right;
+  color: #fff;
+  background-color: #839496;
+  margin: 10px 0;
+  padding: 10px;
+  clear: both;
+  border: 1px solid #586e75;
+}
+/* line 83, sass/solarized_light.scss */
+div.adminmenu div, div.adminmenu form, div.adminmenu select {
+  display: inline;
+}
+
+/* line 88, sass/solarized_light.scss */
+span.adminmenu {
+  font-size: 80%;
+  margin-left: 0.4em;
+}
+/* line 92, sass/solarized_light.scss */
+span.adminmenu a,
+span.adminmenu a:visited {
+  color: #073642;
+  text-decoration: none;
+}
+/* line 96, sass/solarized_light.scss */
+span.adminmenu a:hover {
+  color: #eee8d5;
+}
+
+/* line 101, sass/solarized_light.scss */
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 10px 0 60px;
+}
+/* line 106, sass/solarized_light.scss */
+h1 a, h1 a:visited {
+  text-decoration: none;
+  color: #657b83;
+}
+/* line 110, sass/solarized_light.scss */
+h1 a:hover {
+  color: #dc322f;
+}
+
+/* line 115, sass/solarized_light.scss */
+div.main {
+  float: left;
+  max-width: 640px;
+}
+
+/* line 122, sass/solarized_light.scss */
+hr.sep {
+  display: none;
+}
+
+/* line 126, sass/solarized_light.scss */
+div.sidebar {
+  float: right;
+  max-width: 269px;
+  margin-bottom: 40px;
+}
+
+/* line 132, sass/solarized_light.scss */
+div.day {
+  line-height: 1.6;
+  margin-bottom: 60px;
+}
+/* line 135, sass/solarized_light.scss */
+div.day h2 {
+  font-size: 2em;
+  font-weight: bold;
+  border-bottom: 1px solid #93a1a1;
+}
+/* line 143, sass/solarized_light.scss */
+div.day h2 a,
+div.day h2 a:visited,
+div.day h2 a:hover {
+  text-decoration: none;
+}
+
+/* line 149, sass/solarized_light.scss */
+div.body {
+  margin-bottom: 40px;
+}
+
+/* line 158, sass/solarized_light.scss */
+div.comment,
+div.day div.form,
+div.referer,
+div.refererlist {
+  margin: 20px;
+}
+
+/* line 162, sass/solarized_light.scss */
+div.section {
+  margin-bottom: 40px;
+  /* 
+   * In this rule, we reset the white-space (see hack above)
+   * The width + left/right padding of DTs/DDs equals 50% (for two equal columns)
+   */
+  /*
+   * To keep things tight
+   */
+}
+/* line 164, sass/solarized_light.scss */
+div.section h3, div.section h4, div.section h5 {
+  font-weight: bold;
+  line-height: 1.2;
+}
+/* line 168, sass/solarized_light.scss */
+div.section h3 {
+  font-size: 2em;
+  margin-top: 10px;
+  margin-bottom: 1em;
+  padding-left: 35px;
+  text-indent: -35px;
+  border-left: 10px solid #268BD2;
+}
+/* line 177, sass/solarized_light.scss */
+div.section h3 a,
+div.section h3 a:visited,
+div.section h3 a:hover {
+  text-decoration: none;
+}
+/* line 181, sass/solarized_light.scss */
+div.section h4 {
+  border-left: 10px solid #2aa198;
+  font-size: 1.5em;
+  margin: 1.5em 0 1em 0;
+  padding: 5px 10px;
+  clear: both;
+  background: url(stripe.png);
+}
+/* line 189, sass/solarized_light.scss */
+div.section h5 {
+  border-left: 10px solid #859900;
+  margin: 1.5em 0 1em 0;
+  padding: 5px 10px;
+  clear: both;
+  background: url(stripe.png);
+}
+/* line 196, sass/solarized_light.scss */
+div.section p {
+  margin: 1em 0px 1em 0;
+}
+/* line 201, sass/solarized_light.scss */
+div.section pre,
+div.section blockquote {
+  margin: 20px 0 20px 0;
+  background-color: #eee8d5;
+}
+/* line 205, sass/solarized_light.scss */
+div.section pre {
+  font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+  font-size: 90%;
+  padding: 10px;
+  color: #657b83;
+  overflow: auto;
+}
+/* line 212, sass/solarized_light.scss */
+div.section blockquote {
+  padding: 0 10px;
+  border: 1px solid #93a1a1;
+  border-left-width: 10px;
+}
+/* line 216, sass/solarized_light.scss */
+div.section blockquote p {
+  margin: 10px 0px;
+}
+/* line 220, sass/solarized_light.scss */
+div.section .source {
+  width: 90%;
+  margin: -10px auto 20px;
+}
+/* line 225, sass/solarized_light.scss */
+div.section ul,
+div.section ol {
+  margin-left: 50px;
+}
+/* line 228, sass/solarized_light.scss */
+div.section ul {
+  list-style-type: disc;
+}
+/* line 231, sass/solarized_light.scss */
+div.section ol {
+  list-style-type: decimal;
+}
+/* line 234, sass/solarized_light.scss */
+div.section dl {
+  width: 90%;
+  margin: 20px auto;
+  border-bottom: 1px solid #93a1a1;
+  letter-spacing: -0.31em;
+  *letter-spacing: normal;
+  word-spacing: -0.43em;
+}
+/* line 247, sass/solarized_light.scss */
+div.section dt,
+div.section dd {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  width: 46%;
+  padding: 3px 2% 4px;
+  margin: 0;
+  border-top: 1px solid #93a1a1;
+}
+/* line 262, sass/solarized_light.scss */
+div.section dt {
+  margin-right: -1px;
+  font-weight: bold;
+}
+/* line 266, sass/solarized_light.scss */
+div.section table {
+  width: 90%;
+  margin: 20px auto;
+  border-top: 1px solid #93a1a1;
+  border-left: 1px solid #93a1a1;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+  empty-cells: show;
+}
+/* line 276, sass/solarized_light.scss */
+div.section th {
+  border-right: 1px solid #93a1a1;
+  border-bottom: 1px solid #93a1a1;
+  background-color: #eee8d5;
+  padding: 0.3em 0.5em;
+  text-align: left;
+}
+/* line 283, sass/solarized_light.scss */
+div.section td {
+  border-right: 1px solid #93a1a1;
+  border-bottom: 1px solid #93a1a1;
+  padding: 0.3em 1em;
+}
+/* line 288, sass/solarized_light.scss */
+div.section img {
+  border: 1px solid #93a1a1;
+}
+/* line 294, sass/solarized_light.scss */
+div.section img.right, div.section img.amazon {
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+/* line 299, sass/solarized_light.scss */
+div.section img.left {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+/* line 304, sass/solarized_light.scss */
+div.section img.photo {
+  display: block;
+  float: none;
+  margin: 0px auto;
+  margin-bottom: 10px;
+}
+/* line 310, sass/solarized_light.scss */
+div.section a.flickr {
+  display: block;
+}
+/* line 312, sass/solarized_light.scss */
+div.section a.flickr img.flickr {
+  margin: 10px 0;
+}
+/* line 317, sass/solarized_light.scss */
+div.section div.tags a {
+  text-decoration: none;
+}
+
+/* line 323, sass/solarized_light.scss */
+div.highlight {
+  background: transparent;
+  /* Comment */
+  /* Keyword */
+  /* Operator */
+  /* Comment.Multiline */
+  /* Comment.Single */
+  /* Comment.Special */
+  /* Keyword.Constant */
+  /* Keyword.Declaration */
+  /* Keyword.Namespace */
+  /* Keyword.Pseudo */
+  /* Keyword.Reserved */
+  /* Name.Builtin */
+  /* Name.Constant */
+  /* Name.Function */
+  /* Literal.Number.Float */
+  /* Literal.Number.Hex */
+  /* Literal.Number.Integer */
+  /* Literal.Number.Oct */
+  /* Literal.String.Backtick */
+  /* Literal.String.Char */
+  /* Literal.String.Doc */
+  /* Literal.String.Double */
+  /* Literal.String.Escape */
+  /* Literal.String.Heredoc */
+  /* Literal.String.Interpol */
+  /* Literal.String.Regex */
+  /* Literal.String.Single */
+  /* Name.Variable.Class */
+  /* Name.Variable.Global */
+  /* Name.Variable.Instance */
+}
+/* line 327, sass/solarized_light.scss */
+div.highlight .c {
+  color: #586e75;
+  font-style: italic;
+}
+/* line 329, sass/solarized_light.scss */
+div.highlight .k {
+  color: #93a1a1;
+  font-weight: bold;
+}
+/* line 330, sass/solarized_light.scss */
+div.highlight .o {
+  color: #839496;
+}
+/* line 331, sass/solarized_light.scss */
+div.highlight .cm {
+  color: #586e75;
+  font-style: italic;
+}
+/* line 333, sass/solarized_light.scss */
+div.highlight .c1 {
+  color: #586e75;
+  font-style: italic;
+}
+/* line 334, sass/solarized_light.scss */
+div.highlight .cs {
+  color: #586e75;
+  font-style: italic;
+}
+/* line 345, sass/solarized_light.scss */
+div.highlight .kc {
+  color: #cb4b16;
+  font-weight: bold;
+}
+/* line 346, sass/solarized_light.scss */
+div.highlight .kd {
+  color: #cb4b16;
+  font-weight: bold;
+}
+/* line 347, sass/solarized_light.scss */
+div.highlight .kn {
+  color: #cb4b16;
+  font-weight: bold;
+}
+/* line 348, sass/solarized_light.scss */
+div.highlight .kp {
+  color: #cb4b16;
+}
+/* line 349, sass/solarized_light.scss */
+div.highlight .kr {
+  color: #cb4b16;
+  font-weight: bold;
+}
+/* line 354, sass/solarized_light.scss */
+div.highlight .nb {
+  color: #859900;
+}
+/* line 356, sass/solarized_light.scss */
+div.highlight .no {
+  color: #b58900;
+}
+/* line 360, sass/solarized_light.scss */
+div.highlight .nf {
+  color: #268bd2;
+}
+/* line 367, sass/solarized_light.scss */
+div.highlight .mf {
+  color: #2aa198;
+}
+/* line 368, sass/solarized_light.scss */
+div.highlight .mh {
+  color: #2aa198;
+}
+/* line 369, sass/solarized_light.scss */
+div.highlight .mi {
+  color: #2aa198;
+}
+/* line 370, sass/solarized_light.scss */
+div.highlight .mo {
+  color: #2aa198;
+}
+/* line 371, sass/solarized_light.scss */
+div.highlight .sb {
+  color: #dc322f;
+}
+/* line 372, sass/solarized_light.scss */
+div.highlight .sc {
+  color: #dc322f;
+}
+/* line 373, sass/solarized_light.scss */
+div.highlight .sd {
+  color: #dc322f;
+  font-style: italic;
+}
+/* line 374, sass/solarized_light.scss */
+div.highlight .s2 {
+  color: #2aa198;
+}
+/* line 375, sass/solarized_light.scss */
+div.highlight .se {
+  color: #cb4b16;
+  font-weight: bold;
+}
+/* line 376, sass/solarized_light.scss */
+div.highlight .sh {
+  color: #dc322f;
+}
+/* line 377, sass/solarized_light.scss */
+div.highlight .si {
+  color: #d33682;
+  font-weight: bold;
+}
+/* line 379, sass/solarized_light.scss */
+div.highlight .sr {
+  color: #d33682;
+}
+/* line 380, sass/solarized_light.scss */
+div.highlight .s1 {
+  color: #2aa198;
+}
+/* line 383, sass/solarized_light.scss */
+div.highlight .vc {
+  color: #6c71c4;
+}
+/* line 384, sass/solarized_light.scss */
+div.highlight .vg {
+  color: #6c71c4;
+}
+/* line 385, sass/solarized_light.scss */
+div.highlight .vi {
+  color: #6c71c4;
+}
+
+/* line 393, sass/solarized_light.scss */
+.highlight .hll {
+  background-color: #ffffcc;
+}
+
+/* line 395, sass/solarized_light.scss */
+.highlight .err {
+  border: 1px solid red;
+}
+
+/* Error */
+/* line 399, sass/solarized_light.scss */
+.highlight .cp {
+  color: #bc7a00;
+}
+
+/* Comment.Preproc */
+/* line 402, sass/solarized_light.scss */
+.highlight .gd {
+  color: #a00000;
+}
+
+/* Generic.Deleted */
+/* line 403, sass/solarized_light.scss */
+.highlight .ge {
+  font-style: italic;
+}
+
+/* Generic.Emph */
+/* line 404, sass/solarized_light.scss */
+.highlight .gr {
+  color: red;
+}
+
+/* Generic.Error */
+/* line 405, sass/solarized_light.scss */
+.highlight .gh {
+  color: #000080;
+  font-weight: bold;
+}
+
+/* Generic.Heading */
+/* line 406, sass/solarized_light.scss */
+.highlight .gi {
+  color: #00a000;
+}
+
+/* Generic.Inserted */
+/* line 407, sass/solarized_light.scss */
+.highlight .go {
+  color: gray;
+}
+
+/* Generic.Output */
+/* line 408, sass/solarized_light.scss */
+.highlight .gp {
+  color: #000080;
+  font-weight: bold;
+}
+
+/* Generic.Prompt */
+/* line 409, sass/solarized_light.scss */
+.highlight .gs {
+  font-weight: bold;
+}
+
+/* Generic.Strong */
+/* line 410, sass/solarized_light.scss */
+.highlight .gu {
+  color: #800080;
+  font-weight: bold;
+}
+
+/* Generic.Subheading */
+/* line 411, sass/solarized_light.scss */
+.highlight .gt {
+  color: #0040d0;
+}
+
+/* Generic.Traceback */
+/* line 417, sass/solarized_light.scss */
+.highlight .kt {
+  color: #b00040;
+}
+
+/* Keyword.Type */
+/* line 418, sass/solarized_light.scss */
+.highlight .m {
+  color: #666666;
+}
+
+/* Literal.Number */
+/* line 419, sass/solarized_light.scss */
+.highlight .s {
+  color: #ba2121;
+}
+
+/* Literal.String */
+/* line 420, sass/solarized_light.scss */
+.highlight .na {
+  color: #7d9029;
+}
+
+/* Name.Attribute */
+/* line 422, sass/solarized_light.scss */
+.highlight .nc {
+  color: #0000FF;
+  font-weight: bold;
+}
+
+/* Name.Class */
+/* line 424, sass/solarized_light.scss */
+.highlight .nd {
+  color: #aa22ff;
+}
+
+/* Name.Decorator */
+/* line 425, sass/solarized_light.scss */
+.highlight .ni {
+  color: #999999;
+  font-weight: bold;
+}
+
+/* Name.Entity */
+/* line 426, sass/solarized_light.scss */
+.highlight .ne {
+  color: #D2413A;
+  font-weight: bold;
+}
+
+/* Name.Exception */
+/* line 428, sass/solarized_light.scss */
+.highlight .nl {
+  color: #a0a000;
+}
+
+/* Name.Label */
+/* line 429, sass/solarized_light.scss */
+.highlight .nn {
+  color: #0000FF;
+  font-weight: bold;
+}
+
+/* Name.Namespace */
+/* line 430, sass/solarized_light.scss */
+.highlight .nt {
+  color: #008000;
+  font-weight: bold;
+}
+
+/* Name.Tag */
+/* line 431, sass/solarized_light.scss */
+.highlight .nv {
+  color: #19177c;
+}
+
+/* Name.Variable */
+/* line 432, sass/solarized_light.scss */
+.highlight .ow {
+  color: #AA22FF;
+  font-weight: bold;
+}
+
+/* Operator.Word */
+/* line 433, sass/solarized_light.scss */
+.highlight .w {
+  color: #bbbbbb;
+}
+
+/* Text.Whitespace */
+/* line 445, sass/solarized_light.scss */
+.highlight .sx {
+  color: green;
+}
+
+/* Literal.String.Other */
+/* line 448, sass/solarized_light.scss */
+.highlight .ss {
+  color: #19177c;
+}
+
+/* Literal.String.Symbol */
+/* line 449, sass/solarized_light.scss */
+.highlight .bp {
+  color: green;
+}
+
+/* Name.Builtin.Pseudo */
+/* line 453, sass/solarized_light.scss */
+.highlight .il {
+  color: #666666;
+}
+
+/* Literal.Number.Integer.Long */
+/* line 456, sass/solarized_light.scss */
+a.amazon-detail,
+a.amazon-detail:visited {
+  color: #657b83;
+}
+
+/* line 459, sass/solarized_light.scss */
+span.amazon-detail {
+  margin: 20px auto;
+  border-radius: 8px;
+  border: 1px solid #93a1a1;
+  background-color: #eee8d5;
+  padding: 10px;
+  padding-top: 22px;
+}
+
+/* line 468, sass/solarized_light.scss */
+a.amazon-detail:hover {
+  color: #dc322f;
+}
+/* line 470, sass/solarized_light.scss */
+a.amazon-detail:hover span.amazon-detail {
+  background-color: #fdf6e3;
+}
+
+/* line 475, sass/solarized_light.scss */
+img.amazon-detail {
+  margin-top: 10px !important;
+}
+
+/* line 489, sass/solarized_light.scss */
+div.comment .caption,
+div.refererlist .caption,
+div.day div.form .caption {
+  font-weight: bold;
+}
+/* line 493, sass/solarized_light.scss */
+div.comment .caption a,
+div.comment .caption a:visited,
+div.comment .caption a:hover,
+div.refererlist .caption a,
+div.refererlist .caption a:visited,
+div.refererlist .caption a:hover,
+div.day div.form .caption a,
+div.day div.form .caption a:visited,
+div.day div.form .caption a:hover {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+/* line 499, sass/solarized_light.scss */
+div.commentator a,
+div.commentshort a {
+  text-decoration: none;
+}
+
+/* line 502, sass/solarized_light.scss */
+div.commentbody p {
+  margin: 0 0 10px 10px;
+}
+
+/* line 507, sass/solarized_light.scss */
+div.day div.form div.title input {
+  display: block;
+}
+/* line 510, sass/solarized_light.scss */
+div.day div.form div {
+  margin-bottom: 10px;
+}
+/* line 513, sass/solarized_light.scss */
+div.day div.form div.name {
+  width: 48%;
+  float: left;
+  margin-right: 2%;
+}
+/* line 517, sass/solarized_light.scss */
+div.day div.form div.name input {
+  width: 100%;
+}
+/* line 521, sass/solarized_light.scss */
+div.day div.form div.mail {
+  overflow: auto;
+}
+/* line 523, sass/solarized_light.scss */
+div.day div.form div.mail input {
+  width: 98%;
+}
+/* line 527, sass/solarized_light.scss */
+div.day div.form div.textarea {
+  width: 100%;
+  clear: left;
+}
+/* line 530, sass/solarized_light.scss */
+div.day div.form div.textarea textarea {
+  width: 100%;
+}
+/* line 535, sass/solarized_light.scss */
+div.day div.form input,
+div.day div.form textarea {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 8px;
+}
+/* line 540, sass/solarized_light.scss */
+div.day div.form .button {
+  text-align: right;
+}
+/* line 542, sass/solarized_light.scss */
+div.day div.form .button input {
+  display: inline;
+  padding: 8px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+/* line 552, sass/solarized_light.scss */
+div.refererlist ul,
+div.refererlist li {
+  margin-left: 20px;
+}
+
+/* line 556, sass/solarized_light.scss */
+div.sidebar {
+  overflow: auto;
+  zoom: 1;
+  border-left: 1px solid #93a1a1;
+  padding-left: 10px;
+}
+
+/* line 563, sass/solarized_light.scss */
+div.sidebar-item {
+  overflow: hidden;
+  *zoom: 1;
+  margin: 10px;
+  margin-bottom: 40px;
+  font-size: 90%;
+  border-radius: 8px;
+}
+/* line 569, sass/solarized_light.scss */
+div.sidebar-item:first-child {
+  margin-top: 6px;
+}
+/* line 572, sass/solarized_light.scss */
+div.sidebar-item h3 {
+  font-weight: bold;
+  border-bottom: 1px solid #93a1a1;
+  padding: 10px 0;
+}
+/* line 587, sass/solarized_light.scss */
+div.sidebar-item a,
+div.sidebar-item a:visited,
+div.sidebar-item a:hover {
+  text-decoration: none;
+}
+/* line 590, sass/solarized_light.scss */
+div.sidebar-item ul {
+  margin: 10px 0;
+}
+/* line 592, sass/solarized_light.scss */
+div.sidebar-item ul li {
+  margin: 10px 0;
+}
+
+/* line 598, sass/solarized_light.scss */
+div.profile {
+  border: none;
+  width: 129px;
+  float: left;
+  border-right: 1px solid #93a1a1;
+  padding: 0 10px;
+  margin: 1em 0;
+}
+/* line 607, sass/solarized_light.scss */
+div.profile a,
+div.profile a:visited,
+div.profile a:hover {
+  text-decoration: none;
+}
+/* line 610, sass/solarized_light.scss */
+div.profile .profile-name {
+  font-size: 1em;
+  margin: 10px 0;
+}
+/* line 614, sass/solarized_light.scss */
+div.profile .profile-description {
+  margin: 10px 0;
+}
+
+/* line 619, sass/solarized_light.scss */
+#iusethis {
+  width: 80px;
+  float: right;
+}
+
+/* line 625, sass/solarized_light.scss */
+ul.rss-recent li {
+  margin: 20px 0 !important;
+}
+
+/* line 630, sass/solarized_light.scss */
+div.iddy {
+  text-align: right;
+  font-size: 10px;
+}
+
+/* line 636, sass/solarized_light.scss */
+.recent-list li {
+  margin-bottom: 20px !important;
+}
+
+/* line 640, sass/solarized_light.scss */
+.recent-list-item {
+  margin-top: 0 !important;
+}
+/* line 642, sass/solarized_light.scss */
+.recent-list-item li:first-child {
+  margin-top: 5px;
+}
+
+/* line 647, sass/solarized_light.scss */
+ul.tagcloud {
+  letter-spacing: -1px;
+  font-weight: bold;
+  line-height: 2.2em;
+}
+
+/* line 653, sass/solarized_light.scss */
+div.footer {
+  clear: both;
+  color: #839496;
+  background-color: #002b36;
+  font-size: small;
+  padding: 10px;
+  line-height: 1.4;
+}
+
+/* line 665, sass/solarized_light.scss */
+div.footer a,
+div.footer a:visited,
+div.footer a:hover {
+  color: #268bd2;
+  text-decoration: none;
+}
+
+/* line 670, sass/solarized_light.scss */
+body.update div.autopagerize_page_element {
+  max-width: 640px;
+}
+
+/* line 673, sass/solarized_light.scss */
+form.update div.title input {
+  width: 100%;
+}
+
+/* line 676, sass/solarized_light.scss */
+div.update div.form .button input {
+  padding: 2px;
+}
+
+/* line 680, sass/solarized_light.scss */
+p.message {
+  color: #fff;
+  background-color: #800;
+  width: 100%;
+  margin: 0px auto;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/*
+ design for smart phones
+ */
+@media screen and (max-device-width: 480px) {
+  /* line 693, sass/solarized_light.scss */
+  div.adminmenu {
+    line-height: 2em;
+  }
+
+  /* line 699, sass/solarized_light.scss */
+  div.whole-content {
+    width: 100%;
+  }
+
+  /* line 703, sass/solarized_light.scss */
+  div.main {
+    width: 100%;
+  }
+
+  /* line 708, sass/solarized_light.scss */
+  div.day h2 {
+    font-size: 1.5em;
+  }
+
+  /* line 713, sass/solarized_light.scss */
+  div.section h3 {
+    font-size: 1.5em;
+    margin-left: 1em;
+    text-indent: -1em;
+  }
+  /* line 719, sass/solarized_light.scss */
+  div.section h4,
+  div.section h5 {
+    font-size: 1em;
+  }
+  /* line 726, sass/solarized_light.scss */
+  div.section h4,
+  div.section h5,
+  div.section p,
+  div.section pre,
+  div.section blockquote {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 732, sass/solarized_light.scss */
+  div.section img.left,
+  div.section img.right,
+  div.section img.photo {
+    display: block;
+    float: none;
+    margin: 10px auto;
+  }
+
+  /* line 739, sass/solarized_light.scss */
+  div.comment {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* line 744, sass/solarized_light.scss */
+  div.sidebar {
+    float: none;
+    width: 95%;
+    margin: 40px auto;
+    border-left: none;
+  }
+}
