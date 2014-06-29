@@ -9,6 +9,7 @@ pkg
 tmp
 rdoc
 index.rdf
+no_comments.rdf
 vendor/bundle/
 spec/reports
 doc/*.html
