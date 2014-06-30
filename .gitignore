@@ -9,6 +9,7 @@ pkg
 tmp
 rdoc
 index.rdf
+tdiary.conf
 no_comments.rdf
 vendor/bundle/
 spec/reports
