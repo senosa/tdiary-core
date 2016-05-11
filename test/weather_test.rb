@@ -1,4 +1,3 @@
-# encoding: utf-8
 # by @kou
 # https://github.com/tdiary/tdiary-core/pull/218#issuecomment-10048898
 
@@ -153,7 +152,7 @@ class TestWeatherTranslaterJa < Test::Unit::TestCase
 	def test_translate_few_clouds
 		ja = @plugin_class::WeatherTranslator::S.new('Few clouds').\
 			translate(@plugin_class::Weather::Words_ja)
-		assert_equal('曇', ja)
+		assert_equal('晴', ja)
 	end
 
 	def test_translate_broken_clouds
@@ -179,6 +178,24 @@ class TestWeatherTranslaterJa < Test::Unit::TestCase
 			translate(@plugin_class::Weather::Words_ja)
 		assert_equal('ちぎれ雲', ja)
 	end
+
+	def test_translate_no_significant_weather
+		ja = @plugin_class::WeatherTranslator::S.new('Unknown').\
+			translate(@plugin_class::Weather::Words_ja)
+		assert_equal('', ja)
+	end
+end
+
+class TestWeatherTranslaterEn < Test::Unit::TestCase
+	def setup
+		@plugin_class = TDiary::StubPlugin::new_plugin('misc/plugin/weather.rb', 'en')
+	end
+
+	def test_translate_no_significant_weather
+		en = @plugin_class::WeatherTranslator::S.new('Unknown').\
+			translate(@plugin_class::Weather::Words_en)
+		assert_equal('', en)
+	end
 end
 
 # Stub for @conf
@@ -197,4 +214,3 @@ class FetchTest < Test::Unit::TestCase
 		assert_not_nil(weather.data['temperature(C)'])
 	end
 end
-

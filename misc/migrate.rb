@@ -1,11 +1,10 @@
-# -*- coding: utf-8; -*-
 #!/usr/bin/env ruby
 #
 # migrate.rb $Revision: 1.2 $
 #
 # Copyright (C) 2001-2003, TADA Tadashi <sho@spc.gr.jp>
 # Copyright (C) 2007, Kazuhiko <kazuhiko@fdiary.net>
-# You can redistribute it and/or modify it under GPL2.
+# You can redistribute it and/or modify it under GPL2 or any later version.
 #
 BEGIN { $stdout.binmode }
 
@@ -126,7 +125,7 @@ begin
 	end
 
 	@cgi = CGI::new
-	conf = TDiary::MigrateConfig::new(@cgi)
+	TDiary::MigrateConfig::new(@cgi)
 
 	print @cgi.header( 'status' => '200 OK', 'type' => 'text/html' )
 	puts "<h1>Migration completed.</h1>"

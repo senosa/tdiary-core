@@ -4,34 +4,19 @@ gem 'rack'
 gem 'sprockets'
 gem 'hikidoc'
 gem 'fastimage'
-gem 'tdiary-style-gfm'
-
-group :coffee do
-  gem 'coffee-script'
-  gem 'therubyracer'
-end
-
-group :server do
-  platforms :mri do
-    gem 'thin'
-  end
-
-  platforms :jruby do
-    gem 'trinidad'
-  end
-end
+gem 'emot'
+gem 'mail'
+gem 'rake'
 
 group :development do
   gem 'pit', require: false
   gem 'racksh', require: false
-  gem 'rake'
-  gem 'octorelease'
   gem 'redcarpet'
 
   group :test do
-    gem 'pry'
+    gem 'pry-byebug', platforms: [:ruby_20, :ruby_21]
     gem 'test-unit'
-    gem 'rspec', '~> 3.0.0.beta2'
+    gem 'rspec'
     gem 'capybara', require: 'capybara/rspec'
     gem 'selenium-webdriver'
     gem 'launchy'
@@ -39,7 +24,7 @@ group :development do
     gem 'sqlite3'
     gem 'jasmine'
     gem 'simplecov', require: false
-    gem 'coveralls', require: false
+    gem 'coveralls', '~> 0.7.12', require: false
   end
 end
 

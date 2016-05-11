@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # image.rb
 # -pv-
 #
@@ -34,22 +33,15 @@
 #     Webサーバの権限で書き込めるようにしておく必要があります。
 #  @options['image.url']
 #     画像ファイルを保存するディレクトリのURL。無指定時は'./images/'
-#  @options['image.maxnum']
-#     1日あたりの最大画像数。無指定時は1
-#     ただし@secure = true時のみ有効
-#  @options['image.maxsize']
-#     1枚あたりの最大画像バイト数。無指定時は10000
-#     ただし@secure = true時のみ有効
 #  @options['image.maxwidth']
 #     sizeを指定しなかった場合に指定できる画像の最大表示幅。無指定時はnil
 #     表示のたびにファイルアクセスが入るので、重くなるかも?
-#     @secure = true時は無効
 #
 # ライセンスについて:
 # Copyright (c) 2002,2003 Daisuke Kato <dai@kato-agri.com>
 # Copyright (c) 2002 Toshi Okada <toshi@neverland.to>
 # Copyright (c) 2003 Yoshimi KURUMA <yoshimik@iris.dti.ne.jp>
-# Distributed under the GPL
+# Distributed under the GPL2 or any later version.
 #
 
 unless @resource_loaded then
@@ -66,16 +58,9 @@ unless @resource_loaded then
 end
 
 def image( id, alt = 'image', thumbnail = nil, size = nil, place = 'photo' )
-	if @conf.secure then
-		image = "#{@image_date}_#{id}.jpg"
-		image_t = "#{@image_date}_#{thumbnail}.jpg" if thumbnail
-	else
-   	image = image_list( @image_date )[id.to_i]
-   	image_t = image_list( @image_date )[thumbnail.to_i] if thumbnail
-	end
-	if @cgi.smartphone? then
-		size = ''
-	elsif size
+  	image = image_list( @image_date )[id.to_i]
+  	image_t = image_list( @image_date )[thumbnail.to_i] if thumbnail
+	if size
 		if size.kind_of?(Array)
 			if size.length > 1
 				size = %Q| width="#{h size[0]}" height="#{h size[1]}"|
@@ -85,8 +70,8 @@ def image( id, alt = 'image', thumbnail = nil, size = nil, place = 'photo' )
 		else
 			size = %Q| width="#{size.to_i}"|
 		end
-	elsif @image_maxwidth and not @conf.secure then
-		t, w, h = image_info( "#{@image_dir}/#{image}".untaint )
+	elsif @image_maxwidth then
+		_, w, _ = image_info( "#{@image_dir}/#{image}".untaint )
 		if w > @image_maxwidth then
 			size = %Q[ width="#{h @image_maxwidth}"]
 		else
@@ -109,11 +94,7 @@ def image_right( id, alt = "image", thumbnail = nil, width = nil )
 end
 
 def image_link( id, desc )
-	if @conf.secure then
-		image = "#{@image_date}_#{id}.jpg"
-	else
-   	image = image_list( @image_date )[id.to_i]
-	end
+  	image = image_list( @image_date )[id.to_i]
    %Q[<a href="#{h @image_url}/#{h image}">#{desc}</a>]
 end
 
@@ -145,15 +126,10 @@ def image_info( f )
 end
 
 def image_ext
-	if @conf.secure then
-		'jpg'
-	else
-		'jpg|jpeg|gif|png'
-	end
+	'jpg|jpeg|gif|png'
 end
 
 def image_list( date )
-	return @image_list if @conf.secure and @image_list
 	list = []
 	reg = /#{date}_(\d+)\.(#{image_ext})$/
 	begin
@@ -171,7 +147,6 @@ if /^(form|edit|formplugin|showcomment)$/ =~ @mode then
 	add_js_setting( '$tDiary.plugin.image' )
 	add_js_setting( '$tDiary.plugin.image.alt', %Q|'#{image_label_description}'| )
 	add_js_setting( '$tDiary.plugin.image.drop_here', %Q|'#{image_label_drop_here}'| )
-	@image_list = image_list( @date.strftime( '%Y%m%d' ) ) if @conf.secure
 end
 
 if /^formplugin$/ =~ @mode then
@@ -192,16 +167,11 @@ if /^formplugin$/ =~ @mode then
 					rescue NameError
 						size = file.stat.size
 					end
-					if @conf.secure then
-						raise image_error_num( maxnum ) if images.compact.length >= maxnum
-						raise image_error_size( maxsize ) if size > maxsize
-					end
 					output = "#{@image_dir}/#{date}_#{images.length}.#{extension}".untaint
 					File::umask( 022 )
 					File::open( output, "wb" ) do |f|
 						f.print file.read
 					end
-					images << File::basename( output ) # for secure mode
 				end
 			end
 	   elsif @cgi.params['plugin_image_delimage'][0]
@@ -210,7 +180,6 @@ if /^formplugin$/ =~ @mode then
 	         if File::file?( file ) && File::exist?( file )
 	            File::delete( file )
 	         end
-	         images[id.to_i] = nil # for secure mode
 	      end
 	   end
 	rescue
@@ -234,17 +203,8 @@ add_form_proc do |date|
 		tmp = ''
 	   images.each_with_index do |img,id|
 			next unless img
-			if @conf.secure then
-				img_type, img_w, img_h = 'jpg', nil, nil
-			else
-				img_type, img_w, img_h = image_info(File.join(@image_dir,img).untaint)
-			end
+			_, img_w, img_h = image_info(File.join(@image_dir,img).untaint)
 			r << %Q[<td><img id="image-index-#{id}" class="image-img form" src="#{h @image_url}/#{h img}" alt="#{id}" width="#{h( (img_w && img_w > 160) ? 160 : (img_w ? img_w : 160) )}"></td>]
-			if @conf.secure then
-				img_info = ''
-			else
-				img_info = "#{File.size(File.join(@image_dir,img).untaint).to_s.reverse.gsub( /\d{3}/, '\0,' ).sub( /,$/, '' ).reverse} bytes"
-			end
 			img_info = ''
 			if img_w && img_h
 				img_info << %Q|<span class="image-width">#{img_w}</span> x <span class="image-height">#{img_h}</span>|
@@ -272,7 +232,6 @@ add_form_proc do |date|
 		r << %Q[<p class="message">#{@image_message}</p>]
 	end
    r << %Q[<form class="update" method="post" enctype="multipart/form-data" action="#{h @update}"><div>
-	#{@conf.secure ? image_label_only_jpeg : ''}
 	#{csrf_protection}
    <input type="hidden" name="plugin_image_addimage" value="true">
    <input type="hidden" name="date" value="#{date.strftime( '%Y%m%d' )}">

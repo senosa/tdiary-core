@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 =begin
 = その日の天気プラグイン((-$Id: weather.rb,v 1.13 2008-03-02 09:01:46 kazuhiko Exp $-))
 その日の天気を、その日の日記を最初に更新する時に取得して保存し、それぞれ
@@ -48,8 +47,7 @@ tdiary.confを編集する場合には、@options['weather.url']に設定して�
 などとしておけばいいでしょう。
 
 日記に使用しているWWWサーバーからサーバーの権限でWWWページの閲覧ができる
-必要があります。環境変数TZを変更する場合がありますので、secureモードでは
-使えません。mod_rubyでの動作は今のところ確認していません。
+必要があります。mod_rubyでの動作は今のところ確認していません。
 
 デフォルトでは、携帯端末から閲覧された場合には天気を表示しないようになっ
 ています。携帯からでも天気を表示したい場合には、設定画面から設定するか、
@@ -238,7 +236,8 @@ class Weather
 		[%r[\s*\b(mostly |partly )clear\b\s*]i, '"晴"'],
 		[%r[\s*\bclear\b\s*]i, '"快晴"'],
 		[%r[\s*\b(mostly |partly )?cloudy\b\s*]i, '"曇"'],
-		[%r[\s*\b(broken|few) clouds\b\s*]i, '"曇"'],
+		[%r[\s*\bbroken clouds\b\s*]i, '"曇"'],
+		[%r[\s*\bfew clouds\b\s*]i, '"晴"'],
 		[%r[\s*\bovercast( cloud deck)?\b\s*]i, '"曇"'],
 		[%r[\s*\blight snow showers?\b\s*]i, '"にわか雪"'],
 		[%r[\s*\blight snow\b\s*]i, '"小雪"'],
@@ -260,6 +259,7 @@ class Weather
 		[%r[\s*\bcumulonimbus clouds\b\s*]i, '"積乱雲"'],
 		[%r[\s*\bscattered clouds\b\s*]i, '"ちぎれ雲"'],
 		[%r[\s*\bcumulus clouds\b\s*]i, '"積雲"'],
+		[%r[\Aunknown\z]i, '""'],
 		[%r[\s*\btowering\b\s*]i, '""'],
 		[%r[\s*\bobserved\b\s*]i, '""'],
 		[%r[\s*\bC\b\s*], '"℃"'],

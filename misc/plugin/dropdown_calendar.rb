@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
 # dropdown_calendar.rb
 #
 # calendar: カレンダーをドロップダウンリストに置き換えるプラグイン
 #   パラメタ: なし
 #
 # 	Copyright (C) 2003 TADA Tadashi
-#	You can redistribute it and/or modify it under GPL2.
+#	You can redistribute it and/or modify it under GPL2 or any later version.
 #
 
 @dropdown_calendar_label = '過去の日記' unless @resource_loaded

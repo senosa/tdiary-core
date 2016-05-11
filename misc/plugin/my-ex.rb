@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # my-ex.rb
 #
 # my(拡張版): myプラグインを拡張し、title属性に参照先の内容を挿入します。
@@ -10,9 +9,7 @@
 #   str: リンクにする文字列
 #
 # Copyright (c) 2002 TADA Tadashi <sho@spc.gr.jp>
-# Distributed under the GPL
-
-unless @cgi.mobile_agent?
+# Distributed under the GPL2 or any later version.
 
 def my( a, str, title = nil )
 	date, frag = a.scan( /(\d{4}|\d{6}|\d{8}|\d{8}-\d+)[^\d]*(?:#?([pct]\d+))?$/ )[0]
@@ -43,7 +40,7 @@ def my( a, str, title = nil )
 				tb = nil
 				@diaries[date].each_visible_trackback( frag.to_i ) {|t, idx| tb = t}
 				if tb then
-					url, name, tbtitle, excerpt = tb.body.split( /\n/,4 )
+					_, name, _, excerpt = tb.body.split( /\n/,4 )
 					title = h( "[#{name}] #{@conf.shorten( excerpt, @conf.comment_length )}" )
 				end
 			end
@@ -56,8 +53,6 @@ def my( a, str, title = nil )
 	else
 		%Q[<a href="#{h index}#{anchor anc}">#{str}</a>]
 	end
-end
-
 end
 
 # Local Variables:
